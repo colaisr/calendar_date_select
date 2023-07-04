@@ -22,7 +22,7 @@ module CalendarDateSelect
       ActionView::Base.send(:include, CalendarDateSelect::FormHelpers)
       ActionView::Base.send(:include, CalendarDateSelect::IncludesHelper)
   
-      ActionView::Helpers::InstanceTag.class_eval do
+      ActionView::Helpers::Tags::Base.class_eval do
         class << self; alias new_with_backwards_compatibility new; end #TODO: singleton_class.class_eval
       end
     end
